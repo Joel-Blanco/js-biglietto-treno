@@ -21,26 +21,35 @@ let age =parseInt(Number(prompt ('please enter your age')));
 //-variabile km moltiplico per 0.21
 let kmCalc = km * 0.21;
 
+//defining discounts
+let underDiscount = kmCalc - (kmCalc * 20 / 100 )
+let overDiscount = kmCalc - (kmCalc * 40 / 100 )
 //IF
 //età inferiore a 18 anni --//stampo variabile km -20%
 if (age < 18) {
     console.log(`
     You are qualified for our 20% discount! the total amount for your ticket is now:
-    € ${kmCalc - (kmCalc * 20 / 100 )} instead of € ${kmCalc}
-    `);
+    € ${underDiscount} instead of € ${kmCalc}
+    `)
+    document .getElementById('ticket-price').innerHTML =`You are qualified for our 20% discount! the total amount for your ticket is now:
+    €${underDiscount} instead of € ${kmCalc}`;
 //ELSE IF
 //età superiore a 65 anni--//stampo variabile km -40%
 }else if (age > 65) {
     console.log(`
     You are qualified for our 40% discount! the total amount for your ticket is now:
-     € ${kmCalc - (kmCalc * 40 / 100 )} instead of € ${kmCalc}
-     `);
+     € ${overDiscount} instead of € ${kmCalc}
+     `)
+     document .getElementById('ticket-price').innerHTML =`You are qualified for our 20% discount! the total amount for your ticket is now:
+    €${overDiscount} instead of € ${kmCalc}`;
 //ELSE
 //stampo variabile km
 }else {
-    console.log(`The total amount for your ticket is € ${kmCalc} `);
+    console.log(`The total amount for your ticket is € ${kmCalc}
+    `)
+    document .getElementById('ticket-price').innerHTML =`The total amount for your ticket is € ${kmCalc}`;
 }
 
-document .getElementById('ticket-price').innerHTML = kmCalc;
+
 
 
