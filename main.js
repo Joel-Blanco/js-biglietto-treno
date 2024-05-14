@@ -19,11 +19,11 @@ let km = parseInt(Number(prompt('please enter kilometers willing to travel')));
 let age =parseInt(Number(prompt ('please enter your age')));
 
 //-variabile km moltiplico per 0.21
-let kmCalc = km * 0.21;
+let kmCalc = (km * 0.21).toFixed(2);
 
 //defining discounts
-let underDiscount = kmCalc - (kmCalc * 20 / 100 )
-let overDiscount = kmCalc - (kmCalc * 40 / 100 )
+let underDiscount = (kmCalc - (kmCalc * 20 / 100)).toFixed(2);
+let overDiscount = (kmCalc - (kmCalc * 40 / 100)).toFixed(2);
 //IF
 //età inferiore a 18 anni --//stampo variabile km -20%
 if (age < 18) {
