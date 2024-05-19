@@ -19,35 +19,35 @@ let km = parseInt(Number(prompt('please enter kilometers willing to travel')));
 let age =parseInt(Number(prompt ('please enter your age')));
 
 //-variabile km moltiplico per 0.21
-let kmCalc = (km * 0.21).toFixed(2);
+let kmCalc = (km * 0.21);
 
 //defining discounts
-let underDiscount = (kmCalc - (kmCalc * 20 / 100)).toFixed(2);
-let overDiscount = (kmCalc - (kmCalc * 40 / 100)).toFixed(2);
+let underDiscount = (kmCalc - (kmCalc * 20 / 100));
+let overDiscount = (kmCalc - (kmCalc * 40 / 100));
 //IF
 //età inferiore a 18 anni --//stampo variabile km -20%
 if (age < 18) {
     console.log(`
     You are qualified for our 20% discount! the total amount for your ticket is now:
-    € ${underDiscount} instead of € ${kmCalc}
+    € ${underDiscount.toFixed(2)} instead of € ${kmCalc.toFixed(2)}
     `)
     document .getElementById('ticket-price').innerHTML =`You are qualified for our 20% discount! the total amount for your ticket is now:
-    €${underDiscount} instead of € ${kmCalc}`;
+    €${underDiscount.toFixed(2)} instead of € ${kmCalc.toFixed(2)}`;
 //ELSE IF
 //età superiore a 65 anni--//stampo variabile km -40%
 }else if (age > 65) {
     console.log(`
     You are qualified for our 40% discount! the total amount for your ticket is now:
-     € ${overDiscount} instead of € ${kmCalc}
+     € ${overDiscount.toFixed(2)} instead of € ${kmCalc.toFixed(2)}
      `)
-     document .getElementById('ticket-price').innerHTML =`You are qualified for our 20% discount! the total amount for your ticket is now:
-    €${overDiscount} instead of € ${kmCalc}`;
+     document .getElementById('ticket-price').innerHTML =`You are qualified for our 40% discount! the total amount for your ticket is now:
+    €${overDiscount.toFixed(2)} instead of € ${kmCalc.toFixed(2)}`;
 //ELSE
 //stampo variabile km
 }else {
-    console.log(`The total amount for your ticket is € ${kmCalc}
+    console.log(`The total amount for your ticket is € ${kmCalc.toFixed(2)}
     `)
-    document .getElementById('ticket-price').innerHTML =`The total amount for your ticket is € ${kmCalc}`;
+    document .getElementById('ticket-price').innerHTML =`The total amount for your ticket is € ${kmCalc.toFixed(2)}`;
 }
 
 
